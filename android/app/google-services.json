@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "439406979685",
+    "project_id": "meko-kehnu-a081b",
+    "storage_bucket": "meko-kehnu-a081b.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:439406979685:android:ec2b649675f8928ba8748c",
+        "android_client_info": {
+          "package_name": "com.example.meko"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "439406979685-7h16q4f2e2u2sg5lrbs3h1bhqb61tgd3.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCIZT0vS0XOehb4hPWV4L41R8BpP8QY8UE"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "439406979685-7h16q4f2e2u2sg5lrbs3h1bhqb61tgd3.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

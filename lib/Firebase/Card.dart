@@ -1,6 +1,7 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
 import 'package:meko/Ui/Screens/Guide.dart';
+import 'package:meko/Widgets/SizeBox.dart';
 
 class CardUtil extends StatelessWidget {
   @override
@@ -28,114 +29,77 @@ class CardUtil extends StatelessWidget {
                     // !Designing Strated here---------------------
 
                     return Padding(
-                      padding: const EdgeInsets.only(left: 25),
+                      padding: const EdgeInsets.only(left: 15),
                       child: ClipRRect(
                         borderRadius: BorderRadius.circular(12),
                         child: Container(
-                          padding: EdgeInsets.all(12),
-                          width: 300,
-                          color: Colors.grey,
-                          child: Column(
-                              crossAxisAlignment: CrossAxisAlignment.start,
-                              mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                              children: [
-                                Row(
-                                  mainAxisAlignment:
-                                      MainAxisAlignment.spaceBetween,
-                                  children: [
-                                    Row(
-                                      children: [
-                                        Container(
-                                          height: 80,
-                                          width: 80,
-                                          // ! Img------------------------------
-                                          child: Image.network(
-                                            doucment['Img'],
-                                          ),
-                                        ),
-                                        SizedBox(
-                                          width: 10,
-                                        ),
-                                        Column(
-                                          crossAxisAlignment:
-                                              CrossAxisAlignment.start,
+                          padding: EdgeInsets.symmetric(horizontal: 15),
+                          width: 200,
+                          color: Colors.grey[200],
+                          child: Column(children: [
+                            Container(
+                              height: 70,
+                              width: 70,
+                              // ! Img------------------------------
+                              child: Image.network(
+                                doucment['Img'],
+                              ),
+                            ),
+                            // ! appsname------------------------------
+                            Text(
+                              doucment['appsname'],
+                              style: TextStyle(
+                                  fontSize: 22, fontWeight: FontWeight.bold),
+                            ),
+                            adh(10),
+
+                            GestureDetector(
+                              onTap: () {
+                                Navigator.push(
+                                    context,
+                                    MaterialPageRoute(
+                                      builder: (context) =>
+                                          GuideScreen(doucment: doucment),
+                                    ));
+                              },
+                              child: Center(
+                                child: ClipRRect(
+                                  borderRadius: BorderRadius.circular(15),
+                                  child: Container(
+                                      height: 30,
+                                      padding:
+                                          EdgeInsets.symmetric(horizontal: 10),
+                                      color: Colors.white,
+                                      // ! appsprice-----------------------
+                                      child: Center(
+                                        child: Row(
+                                          mainAxisAlignment:
+                                              MainAxisAlignment.center,
                                           children: [
-                                            Padding(
-                                              padding:
-                                                  const EdgeInsets.only(top: 8),
-                                              // ! appstitle------------------------------
-                                              child: Text(
-                                                doucment['appsname'],
-                                                style: TextStyle(
-                                                    fontSize: 18,
-                                                    fontWeight:
-                                                        FontWeight.bold),
-                                              ),
-                                            ),
-                                            // ! appsprice--------------------------------
-                                          ],
-                                        ),
-                                      ],
-                                    ),
-                                    ClipRRect(
-                                      borderRadius: BorderRadius.circular(15),
-                                      child: Container(
-                                          height: 30,
-                                          width: 70,
-                                          padding: EdgeInsets.all(8),
-                                          color: Colors.green,
-                                          // ! appsname-----------------------
-                                          child: Center(
-                                            child: Text(
-                                              doucment['appsprice'],
-                                              style: TextStyle(
-                                                  color: Colors.black),
-                                            ),
-                                          )),
-                                    )
-                                  ],
-                                ),
-                                Padding(
-                                  padding: const EdgeInsets.only(left: 15),
-                                  child: Text(
-                                    doucment['appstitle'],
-                                    style:
-                                        TextStyle(fontWeight: FontWeight.bold),
-                                  ),
-                                ),
-                                SizedBox(
-                                  height: 10,
-                                ),
-                                GestureDetector(
-                                  onTap: () {
-                                    Navigator.push(
-                                        context,
-                                        MaterialPageRoute(
-                                          builder: (context) =>
-                                              GuideScreen(doucment: doucment),
-                                        ));
-                                  },
-                                  child: Center(
-                                    child: ClipRRect(
-                                      borderRadius: BorderRadius.circular(15),
-                                      child: Container(
-                                          height: 30,
-                                          width: 300,
-                                          padding: EdgeInsets.all(8),
-                                          color: Colors.white,
-                                          // ! appsname-----------------------
-                                          child: Center(
-                                            child: Text(
+                                            Text(
                                               'Claim',
                                               style: TextStyle(
+                                                  fontSize: 14,
                                                   fontWeight: FontWeight.bold,
                                                   color: Colors.black),
                                             ),
-                                          )),
-                                    ),
-                                  ),
+                                            adw(5),
+                                            Text(
+                                              '₹${doucment["appsprice"]}',
+                                              style: TextStyle(
+                                                  fontWeight: FontWeight.bold,
+                                                  color: Colors.green),
+                                            ),
+                                          ],
+                                        ),
+                                      )),
                                 ),
-                              ]),
+                              ),
+                            ),
+                            SizedBox(
+                              height: 5,
+                            )
+                          ]),
                         ),
                       ),
                     );

@@ -36,26 +36,26 @@ class ButtonUtil extends StatelessWidget {
           )),
       child: GestureDetector(
         onTap: OnTap,
-        child: Container(
-          width: size,
-          height: size,
-          child: Center(
-            child: isIcon == false
-                ? Text(text!,
-                    style: TextStyle(
-                        fontSize: size,
-                        color: textcolour,
-                        fontWeight: FontWeight.bold))
-                : Icon(
-                    icon,
-                    color: textcolour,
-                    size: size,
-                  ),
-          ),
-          decoration: BoxDecoration(
-            color: backgroundColor,
-            border: Border.all(color: bordercolor, width: 1.0),
-            borderRadius: BorderRadius.circular(borderRadius),
+        child: Padding(
+          padding: const EdgeInsets.all(10.0),
+          child: Container(
+            width: size,
+            height: size,
+            child: Center(
+              child: Padding(
+                padding: const EdgeInsets.all(5.0),
+                child: Icon(
+                  icon,
+                  color: textcolour,
+                  size: size,
+                ),
+              ),
+            ),
+            decoration: BoxDecoration(
+              color: backgroundColor,
+              border: Border.all(color: bordercolor, width: 1.0),
+              borderRadius: BorderRadius.circular(borderRadius),
+            ),
           ),
         ),
       ),

@@ -1,9 +1,11 @@
 import 'package:curved_navigation_bar/curved_navigation_bar.dart';
 import 'package:flutter/material.dart';
+import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:meko/Ui/Pages/Home.dart';
 import 'package:meko/Ui/Pages/Profile.dart';
 import 'package:meko/Ui/Pages/Refer.dart';
 import 'package:meko/Ui/Pages/Task.dart';
+import 'package:meko/Widgets/Colors.dart';
 
 class NavBarScreen extends StatefulWidget {
   const NavBarScreen({super.key});
@@ -32,10 +34,8 @@ class _NavBarScreenState extends State<NavBarScreen> {
     final items = <Widget>[
 //!Icons used for NavBar--------------------------------------------------------
 
-      Icon(
-        Icons.home,
-        size: 30,
-      ),
+      // ignore: deprecated_member_use
+      FaIcon(FontAwesomeIcons.home),
       Icon(
         Icons.task,
         size: 30,
@@ -56,19 +56,18 @@ class _NavBarScreenState extends State<NavBarScreen> {
       top: false,
       child: Scaffold(
         extendBody: true,
-        backgroundColor: Colors.white,
+        backgroundColor: Colors.transparent,
         bottomNavigationBar: Theme(
           // to change Icon color----------------------------------------------------
           data: Theme.of(context)
-              .copyWith(iconTheme: IconThemeData(color: Colors.white)),
+              .copyWith(iconTheme: IconThemeData(color: Colors.black)),
           // to change Icon color----------------------------------------------------
 
           child: CurvedNavigationBar(
             key: navigationKey,
-            color: Colors.grey,
-
-            buttonBackgroundColor: Colors.grey,
-            backgroundColor: Colors.transparent,
+            color: bgcolor,
+            buttonBackgroundColor: bggrey,
+            backgroundColor: Colors.white,
 
             // to change Icon animation speed----------------------------------------------------
             animationCurve: Curves.easeInOut,

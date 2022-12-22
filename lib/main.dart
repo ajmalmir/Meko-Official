@@ -4,19 +4,16 @@ import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:hive/hive.dart';
 import 'package:meko/Services/AuthService.dart';
-import 'package:meko/firebase_options.dart';
 import 'package:path_provider/path_provider.dart';
 
 Future<void> main() async {
   WidgetsFlutterBinding.ensureInitialized();
-  await Firebase.initializeApp(
-    options: DefaultFirebaseOptions.currentPlatform,
-  );
+  await Firebase.initializeApp();
   ;
   Directory document = await getApplicationDocumentsDirectory();
   Hive.init(document.path);
   // var wallet = await Hive.openBox('Wallet');
-  // var email = await Hive.openBox('email');
+  // var email = awaait Hive.openBox('email');
   runApp(MyApp());
 }
 

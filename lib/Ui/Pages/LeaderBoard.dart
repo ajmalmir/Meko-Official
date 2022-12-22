@@ -54,7 +54,8 @@ class _LeaderBoardState extends State<LeaderBoard> {
                                 child: Image.asset('images/number-2.png')),
                             Container(
                               decoration: BoxDecoration(
-                                  border: Border.all(color: Colors.white, width: 2.0),
+                                  border: Border.all(
+                                      color: Colors.white, width: 2.0),
                                   borderRadius: BorderRadius.only(
                                     topLeft: Radius.circular(50),
                                     topRight: Radius.circular(50),
@@ -101,7 +102,8 @@ class _LeaderBoardState extends State<LeaderBoard> {
 
                             Container(
                               decoration: BoxDecoration(
-                                  border: Border.all(color: Colors.white, width: 2.0),
+                                  border: Border.all(
+                                      color: Colors.white, width: 2.0),
                                   borderRadius: BorderRadius.only(
                                     topLeft: Radius.circular(100),
                                     topRight: Radius.circular(100),
@@ -144,11 +146,12 @@ class _LeaderBoardState extends State<LeaderBoard> {
                             Container(
                                 height: 30,
                                 width: 30,
-                                child: Image.asset('images/number-3.png')),
+                                child: Image.asset('images/trophy.png')),
 
                             Container(
                               decoration: BoxDecoration(
-                                  border: Border.all(color: Colors.white, width: 2.0),
+                                  border: Border.all(
+                                      color: Colors.white, width: 2.0),
                                   borderRadius: BorderRadius.only(
                                     topLeft: Radius.circular(50),
                                     topRight: Radius.circular(50),
@@ -223,14 +226,13 @@ class _LeaderBoardState extends State<LeaderBoard> {
                                   padding: const EdgeInsets.symmetric(
                                       horizontal: 3, vertical: 5),
                                   child: Container(
-                                    width: double.infinity,
-                                    height: 80,
+                                    height: 60,
                                     decoration: BoxDecoration(
-                                        borderRadius: BorderRadius.circular(50),
+                                        borderRadius: BorderRadius.circular(15),
                                         color: Colors.grey),
                                     child: Padding(
                                       padding: const EdgeInsets.symmetric(
-                                          horizontal: 20),
+                                          horizontal: 15),
                                       child: Row(
                                         mainAxisAlignment:
                                             MainAxisAlignment.spaceBetween,
@@ -244,18 +246,10 @@ class _LeaderBoardState extends State<LeaderBoard> {
                                                         color: Colors.white,
                                                         width: 2.0),
                                                     borderRadius:
-                                                        BorderRadius.only(
-                                                      topLeft:
-                                                          Radius.circular(50),
-                                                      topRight:
-                                                          Radius.circular(50),
-                                                      bottomLeft:
-                                                          Radius.circular(50),
-                                                      bottomRight:
-                                                          Radius.circular(50),
-                                                    )),
-                                                width: 50,
-                                                height: 50,
+                                                        BorderRadius.circular(
+                                                            15)),
+                                                width: 60,
+                                                height: 60,
                                                 child: ClipRRect(
                                                   borderRadius:
                                                       BorderRadius.all(

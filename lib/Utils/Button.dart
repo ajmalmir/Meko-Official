@@ -39,11 +39,10 @@ class ButtonUtil extends StatelessWidget {
         child: Padding(
           padding: const EdgeInsets.all(10.0),
           child: Container(
-            width: size,
-            height: size,
-            child: Center(
-              child: Padding(
-                padding: const EdgeInsets.all(5.0),
+            width: 55,
+            height: 55,
+            child: Container(
+              child: Center(
                 child: Icon(
                   icon,
                   color: textcolour,

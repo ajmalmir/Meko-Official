@@ -20,14 +20,14 @@ class _TaskPageState extends State<TaskPage> {
               child: Text(
                 'T A S K',
                 style: TextStyle(
-                    color: Colors.white,
+                    color: Colors.black,
                     fontSize: 70,
                     fontWeight: FontWeight.bold),
               ),
             ),
           ),
           elevation: 0,
-          backgroundColor: Colors.grey,
+          backgroundColor: Colors.grey[300],
         ),
         body: Container(
           padding: EdgeInsets.all(12),

@@ -20,7 +20,7 @@ class _ReferPageState extends State<ReferPage> {
             height: 50,
             width: double.infinity,
             decoration: BoxDecoration(
-                color: Colors.grey,
+                color: Colors.grey[300],
                 borderRadius: BorderRadius.only(
                     bottomLeft: Radius.circular(30),
                     bottomRight: Radius.circular(30))),
@@ -121,81 +121,80 @@ class _ReferPageState extends State<ReferPage> {
                 ),
                 Container(
                   height: 100,
-                  width: double.infinity,
-                  child: Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                    children: [
-                      Container(
-                        decoration: BoxDecoration(
-                            borderRadius: BorderRadius.circular(15),
-                            border: Border.all(
-                              color: Colors.grey,
-                            )),
-                        height: 100,
-                        width: 160,
-                        child: Column(
-                          crossAxisAlignment: CrossAxisAlignment.center,
-                          children: [
-                            SizedBox(
-                              height: 30,
-                            ),
-                            Text(
-                              '0',
-                              style: TextStyle(
-                                  fontWeight: FontWeight.bold, fontSize: 18),
-                            ),
-                            SizedBox(
-                              width: 5,
-                            ),
-                            Text(
-                              'Total Rewads',
-                              style: TextStyle(
-                                  fontWeight: FontWeight.bold, fontSize: 12),
-                            ),
-                          ],
+                  child: Container(
+                    height: 150,
+                    child: Row(
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      children: [
+                        Container(
+                          decoration: BoxDecoration(
+                              borderRadius: BorderRadius.circular(15),
+                              border: Border.all(
+                                color: Colors.grey,
+                              )),
+                          height: 100,
+                          width: 120,
+                          child: Column(
+                            crossAxisAlignment: CrossAxisAlignment.center,
+                            children: [
+                              Text(
+                                '0',
+                                style: TextStyle(
+                                    fontWeight: FontWeight.bold, fontSize: 18),
+                              ),
+                              SizedBox(
+                                width: 5,
+                              ),
+                              Text(
+                                'Total Rewads',
+                                style: TextStyle(
+                                    fontWeight: FontWeight.bold, fontSize: 12),
+                              ),
+                            ],
+                          ),
                         ),
-                      ),
-                      SizedBox(
-                        width: 10,
-                      ),
-                      Container(
-                        decoration: BoxDecoration(
-                            borderRadius: BorderRadius.circular(15),
-                            border: Border.all(
-                              color: Colors.grey,
-                            )),
-                        height: 100,
-                        width: 160,
-                        child: Column(
-                          crossAxisAlignment: CrossAxisAlignment.center,
-                          children: [
-                            SizedBox(
-                              height: 30,
-                            ),
-                            Text(
-                              '0\$',
-                              style: TextStyle(
-                                  fontWeight: FontWeight.bold, fontSize: 18),
-                            ),
-                            SizedBox(
-                              width: 5,
-                            ),
-                            Text(
-                              'Total Earnings',
-                              style: TextStyle(
-                                  fontWeight: FontWeight.bold, fontSize: 12),
-                            ),
-                          ],
+                        SizedBox(
+                          width: 10,
                         ),
-                      ),
-                    ],
+                        Container(
+                          decoration: BoxDecoration(
+                              borderRadius: BorderRadius.circular(15),
+                              border: Border.all(
+                                color: Colors.grey,
+                              )),
+                          height: 100,
+                          width: 120,
+                          child: Column(
+                            crossAxisAlignment: CrossAxisAlignment.center,
+                            children: [
+                              SizedBox(
+                                height: 30,
+                              ),
+                              Text(
+                                '0\$',
+                                style: TextStyle(
+                                    fontWeight: FontWeight.bold, fontSize: 18),
+                              ),
+                              SizedBox(
+                                width: 5,
+                              ),
+                              Text(
+                                'Total Earnings',
+                                style: TextStyle(
+                                    fontWeight: FontWeight.bold, fontSize: 12),
+                              ),
+                            ],
+                          ),
+                        ),
+                      ],
+                    ),
                   ),
                 ),
                 Padding(
-                  padding: const EdgeInsets.only(top: 80),
-                  child: Center(
+                  padding: const EdgeInsets.only(top: 40),
+                  child: Container(
+                    height: 80,
                     child: Row(
-                      mainAxisAlignment: MainAxisAlignment.center,
                       children: [
                         ButtonUtil(
                           textcolour: Colors.white,
@@ -211,9 +210,6 @@ class _ReferPageState extends State<ReferPage> {
                                 builder: (context) => ProfilePage(),
                               )),
                         ),
-                        SizedBox(
-                          width: 10,
-                        ),
                         ButtonUtil(
                           textcolour: Colors.white,
                           backgroundColor: Colors.blue,
@@ -228,9 +224,6 @@ class _ReferPageState extends State<ReferPage> {
                                 builder: (context) => ProfilePage(),
                               )),
                         ),
-                        SizedBox(
-                          width: 10,
-                        ),
                         ButtonUtil(
                             textcolour: Colors.white,
                             backgroundColor: Colors.black,
@@ -239,12 +232,7 @@ class _ReferPageState extends State<ReferPage> {
                             icon: Icons.share,
                             isIcon: true,
                             borderRadius: 12,
-                            OnTap: () => 
-                            ('hello')
-                            ),
-                        SizedBox(
-                          width: 10,
-                        ),
+                            OnTap: () => ('hello')),
                         GestureDetector(
                           child: ButtonUtil(
                             textcolour: Colors.white,
@@ -279,7 +267,7 @@ class _ReferPageState extends State<ReferPage> {
       appBar: AppBar(
         leading: BackButton(color: Colors.white),
         elevation: 0,
-        backgroundColor: Colors.grey,
+        backgroundColor: Colors.grey[300],
       ),
       body: singleChildScrollView,
     );

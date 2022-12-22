@@ -1,5 +1,6 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
+import 'package:meko/Widgets/SizeBox.dart';
 
 class RecentCardUtil extends StatelessWidget {
   @override
@@ -33,7 +34,7 @@ class RecentCardUtil extends StatelessWidget {
                         height: 150,
                         decoration: BoxDecoration(
                             borderRadius: BorderRadius.circular(15),
-                            color: Colors.grey),
+                            color: Colors.grey[200]),
                         padding: EdgeInsets.all(12),
                         child: Column(
                           mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -79,33 +80,39 @@ class RecentCardUtil extends StatelessWidget {
                                           SizedBox(
                                             height: 5,
                                           ),
-                                          // ! appstitle-----------------------------
-                                          Text(
-                                            doucment['appstitle'],
-                                            style:
-                                                TextStyle(color: Colors.white),
-                                          )
                                         ],
                                       )
                                     ],
                                   ),
                                 ]),
                             Container(
-                              decoration: BoxDecoration(
-                                  color: Colors.white,
-                                  borderRadius: BorderRadius.circular(30)),
-                              width: 300,
-                              padding: EdgeInsets.all(5),
-                              // ! appsprice------------------------------
-                              child: Center(
-                                child: Text(
-                                  doucment['appsprice'],
-                                  style: TextStyle(
-                                    fontWeight: FontWeight.bold,
+                                decoration: BoxDecoration(
+                                    color: Colors.amber,
+                                    borderRadius: BorderRadius.circular(30)),
+                                width: 300,
+                                padding: EdgeInsets.all(5),
+                                // ! appsprice------------------------------
+                                child: Center(
+                                  child: Row(
+                                    mainAxisAlignment: MainAxisAlignment.center,
+                                    children: [
+                                      Text(
+                                        'Claim',
+                                        style: TextStyle(
+                                            fontSize: 14,
+                                            fontWeight: FontWeight.bold,
+                                            color: Colors.black),
+                                      ),
+                                      adw(5),
+                                      Text(
+                                        '₹${doucment["appsprice"]}',
+                                        style: TextStyle(
+                                            fontWeight: FontWeight.bold,
+                                            color: Colors.green),
+                                      ),
+                                    ],
                                   ),
-                                ),
-                              ),
-                            ),
+                                )),
                           ],
                         ),
                       ),

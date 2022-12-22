@@ -1,5 +1,6 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
+import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:meko/Ui/Screens/Guide.dart';
 import 'package:meko/Widgets/SizeBox.dart';
 
@@ -30,77 +31,78 @@ class CardUtil extends StatelessWidget {
 
                     return Padding(
                       padding: const EdgeInsets.only(left: 15),
-                      child: ClipRRect(
-                        borderRadius: BorderRadius.circular(12),
-                        child: Container(
-                          padding: EdgeInsets.symmetric(horizontal: 15),
-                          width: 200,
-                          color: Colors.grey[200],
-                          child: Column(children: [
-                            Container(
-                              height: 70,
-                              width: 70,
-                              // ! Img------------------------------
-                              child: Image.network(
-                                doucment['Img'],
-                              ),
-                            ),
-                            // ! appsname------------------------------
-                            Text(
-                              doucment['appsname'],
-                              style: TextStyle(
-                                  fontSize: 22, fontWeight: FontWeight.bold),
-                            ),
-                            adh(10),
-
-                            GestureDetector(
-                              onTap: () {
-                                Navigator.push(
-                                    context,
-                                    MaterialPageRoute(
-                                      builder: (context) =>
-                                          GuideScreen(doucment: doucment),
-                                    ));
-                              },
-                              child: Center(
-                                child: ClipRRect(
-                                  borderRadius: BorderRadius.circular(15),
-                                  child: Container(
-                                      height: 30,
-                                      padding:
-                                          EdgeInsets.symmetric(horizontal: 10),
-                                      color: Colors.white,
-                                      // ! appsprice-----------------------
-                                      child: Center(
-                                        child: Row(
-                                          mainAxisAlignment:
-                                              MainAxisAlignment.center,
-                                          children: [
-                                            Text(
-                                              'Claim',
-                                              style: TextStyle(
-                                                  fontSize: 14,
-                                                  fontWeight: FontWeight.bold,
-                                                  color: Colors.black),
-                                            ),
-                                            adw(5),
-                                            Text(
-                                              '₹${doucment["appsprice"]}',
-                                              style: TextStyle(
-                                                  fontWeight: FontWeight.bold,
-                                                  color: Colors.green),
-                                            ),
-                                          ],
-                                        ),
-                                      )),
+                      child: Container(
+                        decoration: BoxDecoration(
+                            color: Colors.grey[200],
+                            borderRadius: BorderRadius.circular(15)),
+                        width: 200,
+                        child: Column(
+                            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                            children: [
+                              Container(
+                                height: 90,
+                                width: 90,
+                                // ! Img------------------------------
+                                child: Image.network(
+                                  doucment['Img'],
                                 ),
                               ),
-                            ),
-                            SizedBox(
-                              height: 5,
-                            )
-                          ]),
-                        ),
+                              // ! appsname------------------------------
+                              Column(
+                                children: [
+                                  Text(
+                                    doucment['appsname'],
+                                    style: TextStyle(
+                                        fontSize: 22,
+                                        fontWeight: FontWeight.bold),
+                                  ),
+                                  adh(8),
+                                  GestureDetector(
+                                    onTap: () {
+                                      Navigator.push(
+                                          context,
+                                          MaterialPageRoute(
+                                            builder: (context) =>
+                                                GuideScreen(doucment: doucment),
+                                          ));
+                                    },
+                                    child: Container(
+                                        height: 30,
+                                        decoration: BoxDecoration(
+                                            color: Colors.amber,
+                                            borderRadius: BorderRadius.only(
+                                                bottomRight:
+                                                    Radius.circular(15),
+                                                bottomLeft:
+                                                    Radius.circular(15))),
+                                        // ! appsprice-----------------------
+                                        child: Center(
+                                          child: Row(
+                                            mainAxisAlignment:
+                                                MainAxisAlignment.center,
+                                            children: [
+                                              Text(
+                                                'Claim',
+                                                style: TextStyle(
+                                                    fontSize: 18,
+                                                    fontWeight: FontWeight.bold,
+                                                    color: Colors.black),
+                                              ),
+                                              adw(5),
+                                              Text(
+                                                '₹${doucment["appsprice"]}',
+                                                style: TextStyle(
+                                                    fontWeight: FontWeight.bold,
+                                                    color: Colors.green),
+                                              ),
+                                              adw(20),
+                                            ],
+                                          ),
+                                        )),
+                                  ),
+                                ],
+                              ),
+                            ]),
                       ),
                     );
                   }),
